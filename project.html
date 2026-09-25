@@ -43,59 +43,73 @@
          NAVIGATION
     ========================================================== -->
 
-    <header class="site-header">
+    <!-- =========================================================
+         HEADER / NAVIGATION
+         ========================================================= -->
+    <header class="site-header" id="siteHeader">
 
-        <nav class="navbar container">
+        <div class="container nav-container">
 
-            <a href="index.html" class="logo">
-                <span class="logo-bracket">&lt;</span>
-                HL
-                <span class="logo-bracket">/&gt;</span>
+            <!-- Logo -->
+            <a href="#home" class="brand" aria-label="Hopekins Levy Home">
+
+                <span class="brand-mark">
+                    H<span>.</span>
+                </span>
+
+                <span class="brand-name">
+                    Hopekins<span>Levy</span>
+                </span>
+
             </a>
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
 
-            <div class="nav-menu" id="navMenu">
+            <!-- Desktop Navigation -->
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
 
-                <a href="index.html">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
 
-                <a href="index.html#about">About</a>
+                <a href="about.html" class="nav-link">About</a>
 
-                <a
-                    href="projects.html"
-                    class="active"
-                    aria-current="page"
-                >
-                    Projects
-                </a>
+                <a href="skills.html" class="nav-link">Skills</a>
 
-                <a href="index.html#skills">Skills</a>
+                <a href="project.html" class="nav-link active">Projects</a>
 
-                <a href="index.html#services">Services</a>
+                <a href="services.html" class="nav-link">Services</a>
 
-                <a href="index.html#contact">Contact</a>
+                <a href="contact.html" class="nav-link">Contact</a>
 
-                <a
-                    href="index.html#contact"
-                    class="nav-cta"
-                >
+            </nav>
+
+
+            <!-- Header actions -->
+            <div class="nav-actions">
+
+                <a href="#contact" class="nav-contact-button">
                     Let's Talk
-                    <i class="fas fa-arrow-up-right-from-square"></i>
+                    <span class="button-arrow">↗</span>
                 </a>
+
+
+                <!-- Mobile menu button -->
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mainNav"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
             </div>
 
-        </nav>
+        </div>
 
     </header>
-
 
     <main>
 
