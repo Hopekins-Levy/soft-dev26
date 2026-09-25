@@ -2,282 +2,205 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Project details, demonstrations, images and technical information."
+        content="Project details, screenshots and video episodes for Hopekins Levy Software Developer portfolio."
     >
 
-    <title>Project Details | Software Developer</title>
+    <title>Project Details | Hopekins Levy</title>
 
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project-details.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <!-- =========================================================
+         HEADER / NAVIGATION
+    ========================================================== -->
     <header class="site-header">
+        <div class="header-container">
 
-        <div class="nav-container">
-
-            <a href="index.html" class="logo">
-                <span>&lt;</span>Dev<span>/&gt;</span>
+            <a href="index.html" class="brand">
+                <span class="brand-symbol">&lt;/&gt;</span>
+                <span>Hopekins Levy</span>
             </a>
 
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+
             <button
+                type="button"
                 class="menu-toggle"
                 id="menuToggle"
-                aria-label="Toggle navigation"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
             >
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <nav class="main-nav" id="mainNav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="skills.html">Skills</a>
-                <a href="services.html">Services</a>
-                <a href="index.html#projects" class="active">Projects</a>
-                <a href="contacts.html">Contact</a>
-            </nav>
-
         </div>
-
     </header>
 
 
-    <!-- =========================
-         PROJECT DETAILS
-    ========================== -->
-    <main class="project-details-page">
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+    <main>
 
-        <!-- Back button -->
-        <div class="project-container project-top-bar">
-
-            <a href="index.html#projects" class="back-projects">
-                <span>←</span>
-                Back to Projects
-            </a>
-
-        </div>
-
-
-        <!-- =========================
-             PROJECT HERO
-        ========================== -->
         <section class="project-hero">
+            <div class="hero-container">
 
-            <div class="project-container">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="index.html#projects">Projects</a>
+                    <span>/</span>
+                    <span>Details</span>
+                </div>
 
-                <div class="project-hero-content">
+                <div class="hero-content">
 
-                    <span class="project-label">
-                        PROJECT DETAILS
+                    <span class="project-badge">
+                        SOFTWARE PROJECT
                     </span>
 
                     <h1 id="projectTitle">
-                        Project Name
+                        Project Details
                     </h1>
 
-                    <p id="projectShortDescription">
-                        Project description will appear here.
+                    <p id="projectDescription">
+                        Loading project information...
                     </p>
 
-                    <div
-                        class="project-technologies"
-                        id="projectTechnologies"
-                    >
+                    <div class="hero-actions">
+                        <a href="#projectVideos" class="btn btn-primary">
+                            Watch Episodes
+                        </a>
+
+                        <a href="#projectGallery" class="btn btn-secondary">
+                            View Images
+                        </a>
                     </div>
 
                 </div>
 
             </div>
-
         </section>
 
 
-        <!-- =========================
-             PROJECT DESCRIPTION
-        ========================== -->
-        <section class="project-description-section">
+        <!-- =====================================================
+             PROJECT INFORMATION
+        ====================================================== -->
+        <section class="project-overview section">
 
-            <div class="project-container">
-
-                <div class="section-heading">
-
-                    <span>01</span>
-
-                    <div>
-                        <small>ABOUT THE PROJECT</small>
-                        <h2>What is this project?</h2>
-                    </div>
-
-                </div>
-
-
-                <div class="project-description-grid">
-
-                    <div class="project-description-main">
-
-                        <p id="projectDescription">
-                            Detailed project description will appear here.
-                        </p>
-
-                    </div>
-
-
-                    <aside class="project-information">
-
-                        <div class="info-item">
-                            <span>Project Type</span>
-                            <strong id="projectType">—</strong>
-                        </div>
-
-                        <div class="info-item">
-                            <span>Status</span>
-                            <strong id="projectStatus">—</strong>
-                        </div>
-
-                        <div class="info-item">
-                            <span>Role</span>
-                            <strong id="projectRole">—</strong>
-                        </div>
-
-                        <div class="info-item">
-                            <span>Year</span>
-                            <strong id="projectYear">—</strong>
-                        </div>
-
-                    </aside>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             KEY FEATURES
-        ========================== -->
-        <section class="project-features-section">
-
-            <div class="project-container">
+            <div class="container">
 
                 <div class="section-heading">
-
-                    <span>02</span>
-
-                    <div>
-                        <small>PROJECT HIGHLIGHTS</small>
-                        <h2>Key Features</h2>
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="features-grid"
-                    id="projectFeatures"
-                >
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             IMAGE GALLERY
-        ========================== -->
-        <section class="project-gallery-section">
-
-            <div class="project-container">
-
-                <div class="section-heading">
-
-                    <span>03</span>
-
-                    <div>
-                        <small>PROJECT VISUALS</small>
-                        <h2>Project Images</h2>
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="project-gallery"
-                    id="projectGallery"
-                >
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PROTECTED VIDEOS
-        ========================== -->
-        <section class="project-videos-section">
-
-            <div class="project-container">
-
-                <div class="section-heading">
-
-                    <span>04</span>
-
-                    <div>
-                        <small>LIVE DEMONSTRATIONS</small>
-                        <h2>Project Videos</h2>
-                    </div>
-
-                </div>
-
-
-                <!-- Locked state -->
-                <div
-                    class="video-access-panel"
-                    id="videoAccessPanel"
-                >
-
-                    <div class="lock-icon">
-                        🔒
-                    </div>
-
-                    <h3>
-                        Demonstration Videos Are Protected
-                    </h3>
-
+                    <span class="section-label">PROJECT</span>
+                    <h2>Project Overview</h2>
                     <p>
-                        Enter the access code provided to you
-                        to unlock the project demonstrations.
+                        Explore the project interface, screenshots and
+                        demonstration episodes.
                     </p>
+                </div>
+
+                <div class="overview-grid">
+
+                    <article class="overview-card">
+                        <div class="overview-icon">💻</div>
+                        <h3>Technology</h3>
+                        <p id="projectTechnology">
+                            HTML, CSS, JavaScript, PHP and MySQL
+                        </p>
+                    </article>
+
+                    <article class="overview-card">
+                        <div class="overview-icon">🎬</div>
+                        <h3>Video Episodes</h3>
+                        <p>
+                            <strong>5 available</strong> episodes and
+                            <strong>2 coming soon</strong>.
+                        </p>
+                    </article>
+
+                    <article class="overview-card">
+                        <div class="overview-icon">🖼️</div>
+                        <h3>Screenshots</h3>
+                        <p>
+                            Two project screenshots are available for
+                            viewing and downloading.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             VIDEO SECTION
+        ====================================================== -->
+        <section class="project-videos section" id="projectVideos">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">DEMONSTRATION</span>
+
+                    <h2>Project Video Episodes</h2>
+
+                    <p id="videoSectionNote">
+                        Episodes 1–5 are available for viewing.
+                        Episodes 6–7 are still under development.
+                    </p>
+                </div>
+
+
+                <!-- Access Code -->
+                <div class="video-access-card">
+
+                    <div class="access-icon">
+                        🔐
+                    </div>
+
+                    <div class="access-content">
+                        <h3>Protected Project Videos</h3>
+
+                        <p>
+                            Enter the access code to unlock the project
+                            demonstration videos.
+                        </p>
+                    </div>
 
                     <button
                         type="button"
-                        class="primary-button"
-                        id="openCodeModal"
+                        class="btn btn-primary"
+                        id="openAccessModal"
                     >
-                        Unlock Videos
+                        Enter Access Code
                     </button>
 
                 </div>
 
 
-                <!-- Videos -->
+                <!-- Video Grid -->
                 <div
-                    class="project-videos hidden"
-                    id="projectVideos"
+                    class="video-grid"
+                    id="videoGrid"
+                    aria-live="polite"
                 >
+                    <!-- JavaScript inserts videos here -->
                 </div>
 
             </div>
@@ -285,34 +208,82 @@
         </section>
 
 
-        <!-- =========================
-             PROJECT CTA
-        ========================== -->
-        <section class="project-contact-section">
+        <!-- =====================================================
+             IMAGE GALLERY
+        ====================================================== -->
+        <section class="project-gallery section" id="projectGallery">
 
-            <div class="project-container">
+            <div class="container">
 
-                <div class="project-contact-card">
+                <div class="section-heading">
+                    <span class="section-label">SCREENSHOTS</span>
 
-                    <span>
-                        INTERESTED IN THIS PROJECT?
-                    </span>
-
-                    <h2>
-                        Let's talk about your idea.
-                    </h2>
+                    <h2>Project Images</h2>
 
                     <p>
-                        If you have a project similar to this one,
-                        feel free to get in touch.
+                        Click an image to view it in full screen.
                     </p>
+                </div>
+
+                <div
+                    class="gallery-grid project-gallery-two"
+                    id="galleryGrid"
+                >
+                    <!-- JavaScript inserts exactly 2 images -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TECHNOLOGIES
+        ====================================================== -->
+        <section class="technologies section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">STACK</span>
+
+                    <h2>Technologies Used</h2>
+                </div>
+
+                <div class="technology-list" id="technologyList">
+                    <!-- JavaScript inserts technologies -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJECT NAVIGATION
+        ====================================================== -->
+        <section class="project-navigation section">
+
+            <div class="container">
+
+                <div class="navigation-card">
+
+                    <div>
+                        <span class="section-label">MORE WORK</span>
+
+                        <h2>Explore More Projects</h2>
+
+                        <p>
+                            Return to the portfolio and explore other
+                            software development projects.
+                        </p>
+                    </div>
 
                     <a
-                        href="contacts.html"
-                        class="primary-button"
+                        href="index.html#projects"
+                        class="btn btn-primary"
                     >
-                        Contact Me
-                        <span>→</span>
+                        View Projects
                     </a>
 
                 </div>
@@ -324,16 +295,40 @@
     </main>
 
 
-    <!-- =========================
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="site-footer">
+
+        <div class="container footer-container">
+
+            <div>
+                <strong>Hopekins Levy</strong>
+                <p>Software Developer</p>
+            </div>
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Hopekins Levy. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
          ACCESS CODE MODAL
-    ========================== -->
+    ========================================================== -->
     <div
-        class="modal-overlay hidden"
-        id="codeModal"
+        class="modal-overlay"
+        id="accessModal"
+        aria-hidden="true"
     >
 
         <div
-            class="access-modal"
+            class="modal-card"
             role="dialog"
             aria-modal="true"
             aria-labelledby="accessModalTitle"
@@ -342,51 +337,63 @@
             <button
                 type="button"
                 class="modal-close"
-                id="closeCodeModal"
-                aria-label="Close"
+                id="closeAccessModal"
+                aria-label="Close access code window"
             >
-                ×
+                &times;
             </button>
 
-            <div class="modal-lock">
+            <div class="modal-icon">
                 🔐
             </div>
 
             <h2 id="accessModalTitle">
-                Enter Access Code
+                Video Access
             </h2>
 
             <p>
-                Enter the demonstration code to unlock
-                the project videos.
+                Enter the project access code to unlock the
+                demonstration videos.
             </p>
 
-            <form id="accessCodeForm">
+            <form id="accessForm">
 
                 <label for="accessCode">
                     Access Code
                 </label>
 
-                <input
-                    type="password"
-                    id="accessCode"
-                    name="accessCode"
-                    placeholder="Enter your code"
-                    autocomplete="off"
-                    required
-                >
+                <div class="password-wrapper">
 
-                <div
-                    class="access-error"
-                    id="accessError"
-                >
+                    <input
+                        type="password"
+                        id="accessCode"
+                        name="accessCode"
+                        autocomplete="off"
+                        placeholder="Enter access code"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        class="password-toggle"
+                        aria-label="Show access code"
+                    >
+                        👁
+                    </button>
+
                 </div>
+
+                <p
+                    class="access-message"
+                    id="accessMessage"
+                ></p>
 
                 <button
                     type="submit"
-                    class="primary-button modal-submit"
+                    class="btn btn-primary modal-submit"
                 >
-                    Verify & Unlock
+                    Unlock Videos
                 </button>
 
             </form>
@@ -396,21 +403,22 @@
     </div>
 
 
-    <!-- =========================
+    <!-- =========================================================
          IMAGE LIGHTBOX
-    ========================== -->
+    ========================================================== -->
     <div
-        class="image-lightbox hidden"
+        class="lightbox"
         id="imageLightbox"
+        aria-hidden="true"
     >
 
         <button
             type="button"
             class="lightbox-close"
-            id="lightboxClose"
-            aria-label="Close image"
+            id="closeLightbox"
+            aria-label="Close image viewer"
         >
-            ×
+            &times;
         </button>
 
         <button
@@ -419,30 +427,26 @@
             id="lightboxPrev"
             aria-label="Previous image"
         >
-            ‹
+            &#10094;
         </button>
 
         <div class="lightbox-content">
 
             <img
                 src=""
-                alt=""
+                alt="Project screenshot"
                 id="lightboxImage"
             >
 
-            <div class="lightbox-bottom">
-
-                <span id="lightboxCounter">
-                    1 / 4
-                </span>
+            <div class="lightbox-actions">
 
                 <a
                     href="#"
                     id="downloadImage"
-                    class="download-button"
+                    class="btn btn-primary"
                     download
                 >
-                    ↓ Download
+                    Download Image
                 </a>
 
             </div>
@@ -455,16 +459,15 @@
             id="lightboxNext"
             aria-label="Next image"
         >
-            ›
+            &#10095;
         </button>
 
     </div>
 
 
-    <!-- =========================
+    <!-- =========================================================
          JAVASCRIPT
-    ========================== -->
-    <script src="js/script.js"></script>
+    ========================================================== -->
     <script src="js/project-details.js"></script>
 
 </body>
