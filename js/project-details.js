@@ -1,511 +1,262 @@
 /* =========================================================
+   HOPEKINS LEVY
    PROJECT DETAILS JAVASCRIPT
-   Modern Dark Developer Portfolio
-   Frontend-only version
-========================================================= */
+   ========================================================= */
+
+"use strict";
 
 
 /* =========================================================
-   PROJECT DATA
-========================================================= */
+   CONFIGURATION
+   ========================================================= */
 
-const projects = {
+const ACCESS_CODE = "DEMO2026";
 
-    edutrack: {
+const AVAILABLE_EPISODES = 5;
+const TOTAL_EPISODES = 7;
 
-        title: "EduTrack Tanzania",
 
-        shortDescription:
-            "A smart digital platform designed to simplify academic assessment and management for secondary-level education.",
+/*
+ * Keep exactly TWO images.
+ *
+ * Change only these filenames if your actual image filenames
+ * are different.
+ */
+const PROJECT_IMAGES = [
+    {
+        src: "assets/images/TSS-1.png",
+        title: "Tanzania SDA Services - Screenshot 1"
+    },
+    {
+        src: "assets/images/TSS-2.png",
+        title: "Tanzania SDA Services - Screenshot 2"
+    }
+];
 
-        description:
-            "EduTrack Tanzania is a digital education management project focused on helping schools manage academic assessment, student records, teachers, subjects and academic activities more efficiently. The system is designed to reduce manual work, improve accuracy and provide a more organized digital workflow for secondary-level education.",
 
-        type:
-            "Education Management System",
-
-        status:
-            "Development",
-
-        role:
-            "Software Developer",
-
-        year:
-            "2026",
-
-        technologies: [
-            "PHP",
-            "MySQL",
-            "HTML5",
-            "CSS3",
-            "JavaScript",
-            "MySQLi"
-        ],
-
-        features: [
-            {
-                title: "Academic Management",
-                description:
-                    "Organizes academic information and assessment workflows in one digital environment."
-            },
-
-            {
-                title: "Role-Based Workflow",
-                description:
-                    "Provides dedicated workflows for administrators, academic officers and teachers."
-            },
-
-            {
-                title: "Student Assessment",
-                description:
-                    "Supports structured academic assessment and calculation workflows."
-            },
-
-            {
-                title: "Teacher Management",
-                description:
-                    "Helps manage teachers and their academic responsibilities."
-            },
-
-            {
-                title: "Student Records",
-                description:
-                    "Provides an organized digital structure for student academic information."
-            },
-
-            {
-                title: "Centralized System",
-                description:
-                    "Brings important academic management operations together in one platform."
-            }
-        ],
-
-        images: [
-            {
-                title: "System Dashboard",
-                file: "assets/images/projects/edutrack/image-1.jpg"
-            },
-
-            {
-                title: "Academic Management",
-                file: "assets/images/projects/edutrack/image-2.jpg"
-            },
-
-            {
-                title: "Student Records",
-                file: "assets/images/projects/edutrack/image-3.jpg"
-            },
-
-            {
-                title: "Teacher Management",
-                file: "assets/images/projects/edutrack/image-4.jpg"
-            }
-        ],
-
-        videos: [
-            {
-                title: "System Overview",
-                description:
-                    "A demonstration of the overall system workflow.",
-                file:
-                    "assets/videos/projects/edutrack/video-1.mp4"
-            },
-
-            {
-                title: "Academic Workflow",
-                description:
-                    "Demonstration of the academic management workflow.",
-                file:
-                    "assets/videos/projects/edutrack/video-2.mp4"
-            }
-        ]
-
+/*
+ * Episodes 1–5 are available.
+ * Episodes 6–7 intentionally have no playable video source.
+ */
+const PROJECT_EPISODES = [
+    {
+        number: 1,
+        title: "Episode 1",
+        description: "Project demonstration - Episode 1",
+        src: "assets/videos/TSS Episode 1.mp4",
+        available: true
     },
 
+    {
+        number: 2,
+        title: "Episode 2",
+        description: "Project demonstration - Episode 2",
+        src: "assets/videos/TSS Episode 2.mp4",
+        available: true
+    },
 
-    "tanzania-sda-services": {
+    {
+        number: 3,
+        title: "Episode 3",
+        description: "Project demonstration - Episode 3",
+        src: "assets/videos/TSS Episode 3.mp4",
+        available: true
+    },
 
-        title: "Tanzania SDA Services",
+    {
+        number: 4,
+        title: "Episode 4",
+        description: "Project demonstration - Episode 4",
+        src: "assets/videos/TSS Episode 4.mp4",
+        available: true
+    },
 
-        shortDescription:
-            "A digital church services platform designed to organize registration, leadership and member-related workflows.",
+    {
+        number: 5,
+        title: "Episode 5",
+        description: "Project demonstration - Episode 5",
+        src: "assets/videos/TSS Episode 5.mp4",
+        available: true
+    },
 
+    {
+        number: 6,
+        title: "Episode 6",
+        description: "This episode is still under development.",
+        src: "",
+        available: false
+    },
+
+    {
+        number: 7,
+        title: "Episode 7",
+        description: "This episode is still under development.",
+        src: "",
+        available: false
+    }
+];
+
+
+const PROJECT_DATA = {
+
+    edutrack: {
+        title: "EduTrack Tanzania",
         description:
-            "Tanzania SDA Services is a church-focused digital platform designed to improve how church-related services and registration processes are organized. The project focuses on structured workflows for churches, leaders and members while keeping the experience simple and accessible.",
-
-        type:
-            "Church Services Platform",
-
-        status:
-            "Development",
-
-        role:
-            "Software Developer",
-
-        year:
-            "2026",
-
-        technologies: [
-            "PHP",
-            "MySQL",
+            "A digital secondary education management system designed to simplify academic assessment, tracking and educational data management.",
+        technology: [
             "HTML5",
             "CSS3",
             "JavaScript",
+            "PHP",
+            "MySQL",
             "MySQLi"
-        ],
-
-        features: [
-            {
-                title: "Church Management",
-                description:
-                    "Provides a structured environment for organizing church information."
-            },
-
-            {
-                title: "Member Registration",
-                description:
-                    "Supports structured registration based on existing member records."
-            },
-
-            {
-                title: "Leadership Workflow",
-                description:
-                    "Provides dedicated registration workflows for church leaders."
-            },
-
-            {
-                title: "Church Selection",
-                description:
-                    "Allows users to identify their Mtaa and church before continuing registration."
-            },
-
-            {
-                title: "Registration Verification",
-                description:
-                    "Uses existing member information to verify registration details."
-            },
-
-            {
-                title: "Digital Services",
-                description:
-                    "Creates a foundation for delivering multiple church services digitally."
-            }
-        ],
-
-        images: [
-            {
-                title: "Registration Interface",
-                file:
-                    "assets/images/projects/tanzania-sda-services/image-1.jpg"
-            },
-
-            {
-                title: "Church Selection",
-                file:
-                    "assets/images/projects/tanzania-sda-services/image-2.jpg"
-            },
-
-            {
-                title: "Member Registration",
-                file:
-                    "assets/images/projects/tanzania-sda-services/image-3.jpg"
-            },
-
-            {
-                title: "Services Dashboard",
-                file:
-                    "assets/images/projects/tanzania-sda-services/image-4.jpg"
-            }
-        ],
-
-        videos: [
-            {
-                title: "Registration Process",
-                description:
-                    "Demonstration of the registration workflow.",
-                file:
-                    "assets/videos/projects/tanzania-sda-services/INTRO SDA SERVICES WEBSITE_hopekins.mp4"
-            }
         ]
+    },
 
+    "tanzania-sda-services": {
+        title: "Tanzania SDA Services",
+        description:
+            "A digital registration and services management platform designed to support organized member, church and service management.",
+        technology: [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "PHP",
+            "MySQL",
+            "MySQLi"
+        ]
     }
 
 };
 
 
 /* =========================================================
-   CONSTANTS
-========================================================= */
+   DOM HELPERS
+   ========================================================= */
 
-const MAX_IMAGES = 4;
-const MAX_VIDEOS = 6;
-const MAX_COMMENTS = 5;
+const $ = (selector) =>
+    document.querySelector(selector);
 
-/*
- * Frontend-only demonstration access code.
- *
- * IMPORTANT:
- * This is NOT secure authentication because the
- * JavaScript is visible to visitors.
- *
- * Later this can be replaced with PHP verification.
- */
-const VIDEO_ACCESS_CODE = "DEMO2026";
+const $$ = (selector) =>
+    document.querySelectorAll(selector);
 
 
 /* =========================================================
-   DOM ELEMENTS
-========================================================= */
+   PAGE STATE
+   ========================================================= */
 
-const projectTitle =
-    document.getElementById("projectTitle");
+let videosUnlocked = false;
 
-const projectShortDescription =
-    document.getElementById("projectShortDescription");
-
-const projectDescription =
-    document.getElementById("projectDescription");
-
-const projectType =
-    document.getElementById("projectType");
-
-const projectStatus =
-    document.getElementById("projectStatus");
-
-const projectRole =
-    document.getElementById("projectRole");
-
-const projectYear =
-    document.getElementById("projectYear");
-
-const projectTechnologies =
-    document.getElementById("projectTechnologies");
-
-const projectFeatures =
-    document.getElementById("projectFeatures");
-
-const projectGallery =
-    document.getElementById("projectGallery");
-
-const projectVideos =
-    document.getElementById("projectVideos");
-
-const videoAccessPanel =
-    document.getElementById("videoAccessPanel");
-
-const openCodeModal =
-    document.getElementById("openCodeModal");
-
-const codeModal =
-    document.getElementById("codeModal");
-
-const closeCodeModal =
-    document.getElementById("closeCodeModal");
-
-const accessCodeForm =
-    document.getElementById("accessCodeForm");
-
-const accessCode =
-    document.getElementById("accessCode");
-
-const accessError =
-    document.getElementById("accessError");
-
-const imageLightbox =
-    document.getElementById("imageLightbox");
-
-const lightboxImage =
-    document.getElementById("lightboxImage");
-
-const lightboxClose =
-    document.getElementById("lightboxClose");
-
-const lightboxPrev =
-    document.getElementById("lightboxPrev");
-
-const lightboxNext =
-    document.getElementById("lightboxNext");
-
-const lightboxCounter =
-    document.getElementById("lightboxCounter");
-
-const downloadImage =
-    document.getElementById("downloadImage");
+let currentImageIndex = 0;
 
 
 /* =========================================================
-   CURRENT PROJECT
-========================================================= */
+   INITIALIZATION
+   ========================================================= */
 
-let currentProject = null;
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-let currentImages = [];
+        initializeProject();
 
-let currentLightboxIndex = 0;
+        initializeNavigation();
+
+        initializeAccessModal();
+
+        initializeLightbox();
+
+        initializeFooter();
+
+    }
+);
 
 
 /* =========================================================
-   GET PROJECT FROM URL
-========================================================= */
+   PROJECT INITIALIZATION
+   ========================================================= */
 
-function getProjectKey() {
+function initializeProject() {
 
     const params =
-        new URLSearchParams(window.location.search);
-
-    return params.get("project");
-
-}
-
-
-/* =========================================================
-   LOAD PROJECT
-========================================================= */
-
-function loadProject() {
+        new URLSearchParams(
+            window.location.search
+        );
 
     const projectKey =
-        getProjectKey();
-
-    if (!projectKey) {
-
-        showProjectNotFound();
-
-        return;
-
-    }
+        params.get("project");
 
     const project =
-        projects[projectKey];
-
-    if (!project) {
-
-        showProjectNotFound();
-
-        return;
-
-    }
-
-    currentProject = project;
-
-    document.title =
-        `${project.title} | Software Developer`;
-
-    renderProject(project);
-
-}
+        PROJECT_DATA[projectKey] ||
+        PROJECT_DATA["tanzania-sda-services"];
 
 
-/* =========================================================
-   RENDER PROJECT
-========================================================= */
+    const title =
+        $("#projectTitle");
 
-function renderProject(project) {
+    const description =
+        $("#projectDescription");
 
-    /* -----------------------------------------
-       Basic information
-    ----------------------------------------- */
+    const technology =
+        $("#projectTechnology");
 
-    if (projectTitle) {
-        projectTitle.textContent =
+
+    if (title) {
+        title.textContent =
             project.title;
     }
 
-    if (projectShortDescription) {
-        projectShortDescription.textContent =
-            project.shortDescription;
-    }
-
-    if (projectDescription) {
-        projectDescription.textContent =
+    if (description) {
+        description.textContent =
             project.description;
     }
 
-    if (projectType) {
-        projectType.textContent =
-            project.type;
+    if (technology) {
+        technology.textContent =
+            project.technology.join(", ");
     }
 
-    if (projectStatus) {
-        projectStatus.textContent =
-            project.status;
-    }
-
-    if (projectRole) {
-        projectRole.textContent =
-            project.role;
-    }
-
-    if (projectYear) {
-        projectYear.textContent =
-            project.year;
-    }
-
-
-    /* -----------------------------------------
-       Technologies
-    ----------------------------------------- */
 
     renderTechnologies(
-        project.technologies
+        project.technology
     );
 
+    renderImages();
 
-    /* -----------------------------------------
-       Features
-    ----------------------------------------- */
-
-    renderFeatures(
-        project.features
-    );
-
-
-    /* -----------------------------------------
-       Images
-    ----------------------------------------- */
-
-    renderGallery(
-        project.images
-    );
-
-
-    /* -----------------------------------------
-       Videos
-    ----------------------------------------- */
-
-    renderVideos(
-        project.videos
-    );
+    renderVideos();
 
 }
 
 
 /* =========================================================
    TECHNOLOGIES
-========================================================= */
+   ========================================================= */
 
 function renderTechnologies(technologies) {
 
-    if (!projectTechnologies) {
+    const container =
+        $("#technologyList");
+
+    if (!container) {
         return;
     }
 
-    projectTechnologies.innerHTML = "";
+    container.innerHTML = "";
 
     technologies.forEach(
-        technology => {
+        (technology) => {
 
-            const element =
+            const item =
                 document.createElement("span");
 
-            element.className =
-                "project-tech";
+            item.className =
+                "tech-item";
 
-            element.textContent =
+            item.textContent =
                 technology;
 
-            projectTechnologies.appendChild(
-                element
+            container.appendChild(
+                item
             );
 
         }
@@ -515,577 +266,445 @@ function renderTechnologies(technologies) {
 
 
 /* =========================================================
-   FEATURES
-========================================================= */
+   VIDEOS
+   ========================================================= */
 
-function renderFeatures(features) {
+function renderVideos() {
 
-    if (!projectFeatures) {
+    const container =
+        $("#videoGrid");
+
+    if (!container) {
         return;
     }
 
-    projectFeatures.innerHTML = "";
+    container.innerHTML = "";
 
-    features.forEach(
-        (feature, index) => {
+    PROJECT_EPISODES.forEach(
+        (episode) => {
 
             const card =
                 document.createElement("article");
 
-            card.className =
-                "feature-card";
+            if (episode.available) {
 
-            card.innerHTML = `
+                card.className =
+                    "video-card";
 
-                <span class="feature-number">
-                    ${String(index + 1).padStart(2, "0")}
-                </span>
+                card.dataset.episode =
+                    episode.number;
 
-                <h3>
-                    ${escapeHTML(feature.title)}
-                </h3>
+                card.innerHTML = `
+                    <div class="video-wrapper">
 
-                <p>
-                    ${escapeHTML(feature.description)}
-                </p>
-
-            `;
-
-            projectFeatures.appendChild(card);
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   IMAGE GALLERY
-========================================================= */
-
-function renderGallery(images) {
-
-    if (!projectGallery) {
-        return;
-    }
-
-    projectGallery.innerHTML = "";
-
-    /*
-     * Enforce maximum of 4 images.
-     */
-
-    currentImages =
-        Array.isArray(images)
-            ? images.slice(0, MAX_IMAGES)
-            : [];
-
-
-    if (currentImages.length === 0) {
-
-        projectGallery.innerHTML = `
-            <div class="gallery-empty">
-                No project images available yet.
-            </div>
-        `;
-
-        return;
-
-    }
-
-
-    currentImages.forEach(
-        (image, index) => {
-
-            const item =
-                document.createElement("article");
-
-            item.className =
-                "gallery-item";
-
-            item.innerHTML = `
-
-                <img
-                    src="${escapeAttribute(image.file)}"
-                    alt="${escapeAttribute(image.title)}"
-                    class="gallery-image"
-                    data-index="${index}"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <span class="gallery-title">
-                        ${escapeHTML(image.title)}
-                    </span>
-
-                    <div class="gallery-actions">
-
-                        <button
-                            type="button"
-                            class="media-action gallery-like"
-                            data-media-id="image-${index}"
-                            aria-label="Like image"
+                        <video
+                            controls
+                            preload="metadata"
+                            playsinline
+                            controlsList="nodownload"
+                            oncontextmenu="return false;"
                         >
-                            <span>♡</span>
-                            <span class="like-count">0</span>
-                        </button>
+                            <source
+                                src="${escapeHTML(episode.src)}"
+                                type="video/mp4"
+                            >
 
-                        <a
-                            href="${escapeAttribute(image.file)}"
-                            class="media-action"
-                            download
-                            aria-label="Download image"
-                        >
-                            ↓
-                        </a>
+                            Your browser does not support
+                            HTML5 video.
+                        </video>
 
                     </div>
 
-                </div>
+                    <div class="video-info">
 
-            `;
+                        <span class="video-status">
+                            Available
+                        </span>
 
-            projectGallery.appendChild(item);
+                        <h3>
+                            ${escapeHTML(episode.title)}
+                        </h3>
 
-        }
-    );
+                        <p>
+                            ${escapeHTML(
+                                episode.description
+                            )}
+                        </p>
 
+                    </div>
+                `;
 
-    attachGalleryEvents();
+            } else {
 
-}
+                card.className =
+                    "video-card coming-soon";
 
+                card.innerHTML = `
+                    <div class="coming-soon-content">
 
-/* =========================================================
-   GALLERY EVENTS
-========================================================= */
+                        <div class="coming-soon-icon">
+                            🚧
+                        </div>
 
-function attachGalleryEvents() {
+                        <span class="video-status">
+                            Coming Soon
+                        </span>
 
-    const images =
-        document.querySelectorAll(
-            ".gallery-image"
-        );
+                        <h3>
+                            ${escapeHTML(episode.title)}
+                        </h3>
 
-    images.forEach(
-        image => {
+                        <p>
+                            This episode is not available yet.
+                            It is still under development and
+                            will be added when completed.
+                        </p>
 
-            image.addEventListener(
-                "click",
-                () => {
+                    </div>
+                `;
 
-                    const index =
-                        Number(
-                            image.dataset.index
-                        );
+            }
 
-                    openLightbox(index);
-
-                }
-            );
-
-        }
-    );
-
-
-    const likeButtons =
-        document.querySelectorAll(
-            ".gallery-like"
-        );
-
-    likeButtons.forEach(
-        button => {
-
-            setupLikeButton(button);
+            container.appendChild(card);
 
         }
     );
 
-}
-
-
-/* =========================================================
-   VIDEO GALLERY
-========================================================= */
-
-function renderVideos(videos) {
-
-    if (!projectVideos) {
-        return;
-    }
-
-    projectVideos.innerHTML = "";
 
     /*
-     * Enforce maximum of 6 videos.
+     * Videos remain visually present but are protected until
+     * the user enters the correct access code.
      */
-
-    const limitedVideos =
-        Array.isArray(videos)
-            ? videos.slice(0, MAX_VIDEOS)
-            : [];
-
-
-    if (limitedVideos.length === 0) {
-
-        projectVideos.innerHTML = `
-            <div class="videos-empty">
-                No demonstration videos available yet.
-            </div>
-        `;
-
-        return;
-
-    }
-
-
-    limitedVideos.forEach(
-        (video, index) => {
-
-            const card =
-                createVideoCard(
-                    video,
-                    index
-                );
-
-            projectVideos.appendChild(card);
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   CREATE VIDEO CARD
-========================================================= */
-
-function createVideoCard(video, index) {
-
-    const card =
-        document.createElement("article");
-
-    card.className =
-        "video-card";
-
-    const mediaId =
-        `video-${index}`;
-
-    card.innerHTML = `
-
-        <div class="video-player-wrapper">
-
-            <video
-                class="video-player"
-                controls
-                preload="metadata"
-            >
-
-                <source
-                    src="${escapeAttribute(video.file)}"
-                    type="video/mp4"
-                >
-
-                Your browser does not support
-                HTML5 video.
-
-            </video>
-
-        </div>
-
-
-        <div class="video-details">
-
-            <h3>
-                ${escapeHTML(video.title)}
-            </h3>
-
-            <p class="video-description">
-                ${escapeHTML(video.description)}
-            </p>
-
-
-            <div class="video-actions">
-
-                <button
-                    type="button"
-                    class="media-action video-like"
-                    data-media-id="${mediaId}"
-                >
-                    <span class="like-icon">♡</span>
-
-                    <span>
-                        Like
-                    </span>
-
-                    <span class="like-count">
-                        0
-                    </span>
-                </button>
-
-
-                <a
-                    href="${escapeAttribute(video.file)}"
-                    class="media-action"
-                    download
-                >
-                    ↓ Download
-                </a>
-
-            </div>
-
-
-            <div class="video-comments">
-
-                <div class="comments-heading">
-
-                    <strong>
-                        Comments
-                    </strong>
-
-                    <span
-                        class="comments-count"
-                        data-comment-count="${mediaId}"
-                    >
-                        0 / ${MAX_COMMENTS}
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="comments-list"
-                    data-comments="${mediaId}"
-                >
-                </div>
-
-
-                <form
-                    class="comment-form"
-                    data-comment-form="${mediaId}"
-                >
-
-                    <input
-                        type="text"
-                        name="commenter"
-                        placeholder="Your name"
-                        maxlength="40"
-                        required
-                    >
-
-                    <textarea
-                        name="comment"
-                        placeholder="Write a comment..."
-                        maxlength="250"
-                        required
-                    ></textarea>
-
-                    <button
-                        type="submit"
-                        class="primary-button"
-                    >
-                        Post Comment
-                    </button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    `;
-
-
-    setupLikeButton(
-        card.querySelector(".video-like")
-    );
-
-
-    setupComments(
-        card,
-        mediaId
-    );
-
-
-    return card;
+    lockVideos();
 
 }
 
 
 /* =========================================================
    VIDEO ACCESS
-========================================================= */
+   ========================================================= */
+
+function lockVideos() {
+
+    const videos =
+        $$("#videoGrid video");
+
+    videos.forEach(
+        (video) => {
+
+            video.pause();
+
+            video.removeAttribute(
+                "controls"
+            );
+
+            video.classList.add(
+                "video-locked"
+            );
+
+        }
+    );
+
+}
+
 
 function unlockVideos() {
 
-    if (!videoAccessPanel || !projectVideos) {
-        return;
-    }
+    const videos =
+        $$("#videoGrid video");
 
-    videoAccessPanel.classList.add(
-        "hidden"
+    videos.forEach(
+        (video) => {
+
+            video.setAttribute(
+                "controls",
+                ""
+            );
+
+            video.classList.remove(
+                "video-locked"
+            );
+
+        }
     );
 
-    projectVideos.classList.remove(
-        "hidden"
-    );
+    videosUnlocked = true;
 
 }
 
 
 /* =========================================================
-   ACCESS CODE MODAL
-========================================================= */
+   ACCESS MODAL
+   ========================================================= */
 
-function openAccessModal() {
+function initializeAccessModal() {
 
-    if (!codeModal) {
+    const modal =
+        $("#accessModal");
+
+    const openButton =
+        $("#openAccessModal");
+
+    const closeButton =
+        $("#closeAccessModal");
+
+    const form =
+        $("#accessForm");
+
+    const input =
+        $("#accessCode");
+
+    const toggle =
+        $("#togglePassword");
+
+
+    if (
+        !modal ||
+        !openButton ||
+        !closeButton ||
+        !form ||
+        !input
+    ) {
         return;
     }
 
-    codeModal.classList.remove(
-        "hidden"
-    );
 
-    document.body.style.overflow =
-        "hidden";
-
-    setTimeout(
+    openButton.addEventListener(
+        "click",
         () => {
 
-            if (accessCode) {
-                accessCode.focus();
+            openModal(modal);
+
+            setTimeout(
+                () => input.focus(),
+                100
+            );
+
+        }
+    );
+
+
+    closeButton.addEventListener(
+        "click",
+        () => {
+
+            closeModal(modal);
+
+        }
+    );
+
+
+    modal.addEventListener(
+        "click",
+        (event) => {
+
+            if (
+                event.target === modal
+            ) {
+                closeModal(modal);
             }
 
-        },
-        100
+        }
+    );
+
+
+    form.addEventListener(
+        "submit",
+        (event) => {
+
+            event.preventDefault();
+
+            validateAccessCode();
+
+        }
+    );
+
+
+    if (toggle) {
+
+        toggle.addEventListener(
+            "click",
+            () => {
+
+                if (
+                    input.type === "password"
+                ) {
+
+                    input.type = "text";
+
+                    toggle.textContent =
+                        "🙈";
+
+                    toggle.setAttribute(
+                        "aria-label",
+                        "Hide access code"
+                    );
+
+                } else {
+
+                    input.type =
+                        "password";
+
+                    toggle.textContent =
+                        "👁";
+
+                    toggle.setAttribute(
+                        "aria-label",
+                        "Show access code"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains(
+                    "active"
+                )
+            ) {
+
+                closeModal(modal);
+
+            }
+
+        }
     );
 
 }
 
 
-function closeAccessModal() {
+function validateAccessCode() {
 
-    if (!codeModal) {
-        return;
-    }
+    const input =
+        $("#accessCode");
 
-    codeModal.classList.add(
-        "hidden"
-    );
+    const message =
+        $("#accessMessage");
 
-    document.body.style.overflow =
-        "";
-
-    if (accessError) {
-        accessError.textContent = "";
-    }
-
-    if (accessCode) {
-        accessCode.value = "";
-    }
-
-}
-
-
-/* =========================================================
-   VERIFY ACCESS CODE
-========================================================= */
-
-function verifyAccessCode(event) {
-
-    event.preventDefault();
-
-    if (!accessCode) {
+    if (!input || !message) {
         return;
     }
 
     const enteredCode =
-        accessCode.value.trim();
+        input.value.trim();
 
-
-    if (!enteredCode) {
-
-        showAccessError(
-            "Please enter the access code."
-        );
-
-        return;
-
-    }
-
-
-    /*
-     * Case-insensitive comparison.
-     */
 
     if (
-        enteredCode.toUpperCase() ===
-        VIDEO_ACCESS_CODE.toUpperCase()
+        enteredCode === ACCESS_CODE
     ) {
 
-        localStorage.setItem(
-            getVideoAccessStorageKey(),
-            "unlocked"
-        );
-
-        closeAccessModal();
-
         unlockVideos();
 
-        return;
+        message.textContent =
+            "Access granted. Videos are now unlocked.";
+
+        message.className =
+            "access-message success";
+
+
+        /*
+         * Keep unlocked state only for this browser tab.
+         */
+        sessionStorage.setItem(
+            "projectVideosUnlocked",
+            "true"
+        );
+
+
+        setTimeout(
+            () => {
+
+                const modal =
+                    $("#accessModal");
+
+                if (modal) {
+                    closeModal(modal);
+                }
+
+                input.value = "";
+
+            },
+            900
+        );
+
+    } else {
+
+        message.textContent =
+            "Incorrect access code. Please try again.";
+
+        message.className =
+            "access-message error";
+
+        input.select();
 
     }
 
+}
 
-    showAccessError(
-        "The access code is incorrect."
+
+/* =========================================================
+   MODAL HELPERS
+   ========================================================= */
+
+function openModal(modal) {
+
+    modal.classList.add(
+        "active"
     );
 
-    accessCode.select();
+    modal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add(
+        "modal-open"
+    );
+
+}
+
+
+function closeModal(modal) {
+
+    modal.classList.remove(
+        "active"
+    );
+
+    modal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.classList.remove(
+        "modal-open"
+    );
 
 }
 
 
 /* =========================================================
-   ACCESS ERROR
-========================================================= */
+   SESSION ACCESS
+   ========================================================= */
 
-function showAccessError(message) {
-
-    if (!accessError) {
-        return;
-    }
-
-    accessError.textContent =
-        message;
-
-}
-
-
-/* =========================================================
-   REMEMBER VIDEO ACCESS
-========================================================= */
-
-function getVideoAccessStorageKey() {
-
-    const projectKey =
-        getProjectKey() || "unknown";
-
-    return `portfolio_video_access_${projectKey}`;
-
-}
-
-
-function checkExistingVideoAccess() {
+function restoreVideoAccess() {
 
     const unlocked =
-        localStorage.getItem(
-            getVideoAccessStorageKey()
+        sessionStorage.getItem(
+            "projectVideosUnlocked"
         );
 
-    if (unlocked === "unlocked") {
+    if (
+        unlocked === "true"
+    ) {
 
         unlockVideos();
 
@@ -1095,128 +714,291 @@ function checkExistingVideoAccess() {
 
 
 /* =========================================================
-   IMAGE LIGHTBOX
-========================================================= */
+   IMAGES
+   ========================================================= */
+
+function renderImages() {
+
+    const container =
+        $("#galleryGrid");
+
+    if (!container) {
+        return;
+    }
+
+    container.innerHTML = "";
+
+
+    PROJECT_IMAGES
+        .slice(0, 2)
+        .forEach(
+            (image, index) => {
+
+                const item =
+                    document.createElement(
+                        "button"
+                    );
+
+                item.type = "button";
+
+                item.className =
+                    "gallery-item";
+
+                item.setAttribute(
+                    "aria-label",
+                    `Open ${image.title}`
+                );
+
+                item.innerHTML = `
+                    <img
+                        src="${escapeHTML(image.src)}"
+                        alt="${escapeHTML(image.title)}"
+                        loading="lazy"
+                    >
+
+                    <span class="gallery-overlay">
+                        <strong>
+                            ${escapeHTML(image.title)}
+                        </strong>
+                    </span>
+                `;
+
+                item.addEventListener(
+                    "click",
+                    () => {
+
+                        openLightbox(index);
+
+                    }
+                );
+
+                container.appendChild(item);
+
+            }
+        );
+
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+function initializeLightbox() {
+
+    const lightbox =
+        $("#imageLightbox");
+
+    const closeButton =
+        $("#closeLightbox");
+
+    const previous =
+        $("#lightboxPrev");
+
+    const next =
+        $("#lightboxNext");
+
+
+    if (!lightbox) {
+        return;
+    }
+
+
+    if (closeButton) {
+
+        closeButton.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+    }
+
+
+    if (previous) {
+
+        previous.addEventListener(
+            "click",
+            showPreviousImage
+        );
+
+    }
+
+
+    if (next) {
+
+        next.addEventListener(
+            "click",
+            showNextImage
+        );
+
+    }
+
+
+    lightbox.addEventListener(
+        "click",
+        (event) => {
+
+            if (
+                event.target === lightbox
+            ) {
+                closeLightbox();
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                !lightbox.classList.contains(
+                    "active"
+                )
+            ) {
+                return;
+            }
+
+            if (
+                event.key === "Escape"
+            ) {
+                closeLightbox();
+            }
+
+            if (
+                event.key === "ArrowLeft"
+            ) {
+                showPreviousImage();
+            }
+
+            if (
+                event.key === "ArrowRight"
+            ) {
+                showNextImage();
+            }
+
+        }
+    );
+
+}
+
 
 function openLightbox(index) {
 
-    if (
-        !imageLightbox ||
-        !currentImages.length
-    ) {
+    const lightbox =
+        $("#imageLightbox");
+
+    if (!lightbox) {
         return;
     }
 
-    currentLightboxIndex =
-        normalizeImageIndex(index);
+    currentImageIndex =
+        index;
 
     updateLightbox();
 
-    imageLightbox.classList.remove(
-        "hidden"
+    lightbox.classList.add(
+        "active"
     );
 
-    document.body.style.overflow =
-        "hidden";
+    lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add(
+        "modal-open"
+    );
 
 }
 
 
 function closeLightbox() {
 
-    if (!imageLightbox) {
+    const lightbox =
+        $("#imageLightbox");
+
+    if (!lightbox) {
         return;
     }
 
-    imageLightbox.classList.add(
-        "hidden"
+    lightbox.classList.remove(
+        "active"
     );
 
-    document.body.style.overflow =
-        "";
+    lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.classList.remove(
+        "modal-open"
+    );
 
 }
 
 
 function updateLightbox() {
 
-    if (
-        !currentImages.length ||
-        !lightboxImage
-    ) {
+    const image =
+        PROJECT_IMAGES[
+            currentImageIndex
+        ];
+
+    if (!image) {
         return;
     }
 
-    const image =
-        currentImages[
-            currentLightboxIndex
-        ];
+
+    const lightboxImage =
+        $("#lightboxImage");
+
+    const download =
+        $("#downloadImage");
 
 
-    lightboxImage.src =
-        image.file;
+    if (lightboxImage) {
 
-    lightboxImage.alt =
-        image.title;
+        lightboxImage.src =
+            image.src;
 
-
-    if (lightboxCounter) {
-
-        lightboxCounter.textContent =
-            `${currentLightboxIndex + 1} / ${currentImages.length}`;
+        lightboxImage.alt =
+            image.title;
 
     }
 
 
-    if (downloadImage) {
+    if (download) {
 
-        downloadImage.href =
-            image.file;
+        download.href =
+            image.src;
 
-        downloadImage.setAttribute(
+        download.setAttribute(
             "download",
-            getDownloadFilename(
-                image.file
-            )
+            getFilename(image.src)
         );
 
     }
-
-}
-
-
-function normalizeImageIndex(index) {
-
-    if (!currentImages.length) {
-        return 0;
-    }
-
-    if (index < 0) {
-
-        return currentImages.length - 1;
-
-    }
-
-    if (
-        index >=
-        currentImages.length
-    ) {
-
-        return 0;
-
-    }
-
-    return index;
 
 }
 
 
 function showPreviousImage() {
 
-    currentLightboxIndex =
-        normalizeImageIndex(
-            currentLightboxIndex - 1
-        );
+    if (
+        PROJECT_IMAGES.length === 0
+    ) {
+        return;
+    }
+
+    currentImageIndex =
+        (
+            currentImageIndex -
+            1 +
+            PROJECT_IMAGES.length
+        ) %
+        PROJECT_IMAGES.length;
 
     updateLightbox();
 
@@ -1225,10 +1007,18 @@ function showPreviousImage() {
 
 function showNextImage() {
 
-    currentLightboxIndex =
-        normalizeImageIndex(
-            currentLightboxIndex + 1
-        );
+    if (
+        PROJECT_IMAGES.length === 0
+    ) {
+        return;
+    }
+
+    currentImageIndex =
+        (
+            currentImageIndex +
+            1
+        ) %
+        PROJECT_IMAGES.length;
 
     updateLightbox();
 
@@ -1236,546 +1026,143 @@ function showNextImage() {
 
 
 /* =========================================================
-   LIKES
-========================================================= */
+   NAVIGATION
+   ========================================================= */
 
-function setupLikeButton(button) {
+function initializeNavigation() {
 
-    if (!button) {
+    const toggle =
+        $("#menuToggle");
+
+    const nav =
+        $("#mainNav");
+
+
+    if (
+        !toggle ||
+        !nav
+    ) {
         return;
     }
 
-    const mediaId =
-        button.dataset.mediaId;
 
-    if (!mediaId) {
-        return;
-    }
-
-
-    updateLikeButton(
-        button,
-        mediaId
-    );
-
-
-    button.addEventListener(
+    toggle.addEventListener(
         "click",
         () => {
 
-            toggleLike(
-                button,
-                mediaId
-            );
-
-        }
-    );
-
-}
-
-
-function getLikeStorageKey(mediaId) {
-
-    const projectKey =
-        getProjectKey() || "unknown";
-
-    return `portfolio_like_${projectKey}_${mediaId}`;
-
-}
-
-
-function getLikeCountStorageKey(mediaId) {
-
-    const projectKey =
-        getProjectKey() || "unknown";
-
-    return `portfolio_like_count_${projectKey}_${mediaId}`;
-
-}
-
-
-function toggleLike(button, mediaId) {
-
-    const liked =
-        localStorage.getItem(
-            getLikeStorageKey(mediaId)
-        ) === "true";
-
-
-    let count =
-        Number(
-            localStorage.getItem(
-                getLikeCountStorageKey(
-                    mediaId
-                )
-            ) || 0
-        );
-
-
-    if (liked) {
-
-        localStorage.setItem(
-            getLikeStorageKey(mediaId),
-            "false"
-        );
-
-        count =
-            Math.max(
-                0,
-                count - 1
-            );
-
-    } else {
-
-        localStorage.setItem(
-            getLikeStorageKey(mediaId),
-            "true"
-        );
-
-        count++;
-
-    }
-
-
-    localStorage.setItem(
-        getLikeCountStorageKey(mediaId),
-        String(count)
-    );
-
-
-    updateLikeButton(
-        button,
-        mediaId
-    );
-
-}
-
-
-function updateLikeButton(
-    button,
-    mediaId
-) {
-
-    if (!button) {
-        return;
-    }
-
-    const liked =
-        localStorage.getItem(
-            getLikeStorageKey(mediaId)
-        ) === "true";
-
-
-    const count =
-        Number(
-            localStorage.getItem(
-                getLikeCountStorageKey(
-                    mediaId
-                )
-            ) || 0
-        );
-
-
-    const countElement =
-        button.querySelector(
-            ".like-count"
-        );
-
-
-    const icon =
-        button.querySelector(
-            ".like-icon"
-        ) ||
-        button.querySelector(
-            "span"
-        );
-
-
-    if (countElement) {
-
-        countElement.textContent =
-            count;
-
-    }
-
-
-    if (icon) {
-
-        if (
-            button.classList.contains(
-                "gallery-like"
-            )
-        ) {
-
-            icon.textContent =
-                liked
-                    ? "♥"
-                    : "♡";
-
-        } else {
-
-            icon.textContent =
-                liked
-                    ? "♥"
-                    : "♡";
-
-        }
-
-    }
-
-
-    button.classList.toggle(
-        "liked",
-        liked
-    );
-
-}
-
-
-/* =========================================================
-   COMMENTS
-========================================================= */
-
-function getCommentsStorageKey(
-    mediaId
-) {
-
-    const projectKey =
-        getProjectKey() || "unknown";
-
-    return `portfolio_comments_${projectKey}_${mediaId}`;
-
-}
-
-
-function getComments(mediaId) {
-
-    try {
-
-        const saved =
-            localStorage.getItem(
-                getCommentsStorageKey(
-                    mediaId
-                )
-            );
-
-        if (!saved) {
-            return [];
-        }
-
-        const comments =
-            JSON.parse(saved);
-
-        return Array.isArray(comments)
-            ? comments
-            : [];
-
-    } catch (error) {
-
-        console.warn(
-            "Unable to load comments.",
-            error
-        );
-
-        return [];
-
-    }
-
-}
-
-
-function saveComments(
-    mediaId,
-    comments
-) {
-
-    localStorage.setItem(
-        getCommentsStorageKey(
-            mediaId
-        ),
-        JSON.stringify(comments)
-    );
-
-}
-
-
-function setupComments(
-    card,
-    mediaId
-) {
-
-    const form =
-        card.querySelector(
-            `[data-comment-form="${mediaId}"]`
-        );
-
-    if (!form) {
-        return;
-    }
-
-
-    renderComments(
-        card,
-        mediaId
-    );
-
-
-    form.addEventListener(
-        "submit",
-        event => {
-
-            event.preventDefault();
-
-            addComment(
-                card,
-                mediaId,
-                form
-            );
-
-        }
-    );
-
-}
-
-
-function renderComments(
-    card,
-    mediaId
-) {
-
-    const list =
-        card.querySelector(
-            `[data-comments="${mediaId}"]`
-        );
-
-    const counter =
-        card.querySelector(
-            `[data-comment-count="${mediaId}"]`
-        );
-
-    const form =
-        card.querySelector(
-            `[data-comment-form="${mediaId}"]`
-        );
-
-
-    if (!list) {
-        return;
-    }
-
-
-    const comments =
-        getComments(mediaId)
-            .slice(0, MAX_COMMENTS);
-
-
-    list.innerHTML = "";
-
-
-    comments.forEach(
-        comment => {
-
-            const item =
-                document.createElement(
-                    "div"
+            const active =
+                nav.classList.toggle(
+                    "active"
                 );
 
-            item.className =
-                "comment-item";
-
-            item.innerHTML = `
-
-                <span class="comment-author">
-                    ${escapeHTML(comment.name)}
-                </span>
-
-                <p class="comment-text">
-                    ${escapeHTML(comment.text)}
-                </p>
-
-            `;
-
-            list.appendChild(item);
+            toggle.setAttribute(
+                "aria-expanded",
+                String(active)
+            );
 
         }
     );
 
 
-    if (counter) {
+    nav.querySelectorAll("a")
+        .forEach(
+            (link) => {
 
-        counter.textContent =
-            `${comments.length} / ${MAX_COMMENTS}`;
+                link.addEventListener(
+                    "click",
+                    () => {
 
-    }
+                        nav.classList.remove(
+                            "active"
+                        );
 
+                        toggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
 
-    /*
-     * Disable the form after five comments.
-     */
+                    }
+                );
 
-    if (comments.length >= MAX_COMMENTS) {
-
-        if (form) {
-
-            form.innerHTML = `
-                <div class="comment-limit-message">
-                    Comment limit reached for this video.
-                </div>
-            `;
-
-        }
-
-    }
-
-}
-
-
-function addComment(
-    card,
-    mediaId,
-    form
-) {
-
-    const comments =
-        getComments(mediaId);
-
-
-    if (
-        comments.length >=
-        MAX_COMMENTS
-    ) {
-
-        renderComments(
-            card,
-            mediaId
+            }
         );
-
-        return;
-
-    }
-
-
-    const nameInput =
-        form.querySelector(
-            '[name="commenter"]'
-        );
-
-    const commentInput =
-        form.querySelector(
-            '[name="comment"]'
-        );
-
-
-    if (
-        !nameInput ||
-        !commentInput
-    ) {
-        return;
-    }
-
-
-    const name =
-        nameInput.value.trim();
-
-    const text =
-        commentInput.value.trim();
-
-
-    if (!name || !text) {
-        return;
-    }
-
-
-    comments.push({
-
-        name:
-            name.substring(0, 40),
-
-        text:
-            text.substring(0, 250),
-
-        createdAt:
-            Date.now()
-
-    });
-
-
-    saveComments(
-        mediaId,
-        comments
-    );
-
-
-    form.reset();
-
-
-    renderComments(
-        card,
-        mediaId
-    );
 
 }
 
 
 /* =========================================================
-   PROJECT NOT FOUND
-========================================================= */
+   FOOTER
+   ========================================================= */
 
-function showProjectNotFound() {
+function initializeFooter() {
 
-    if (projectTitle) {
+    const year =
+        $("#currentYear");
 
-        projectTitle.textContent =
-            "Project Not Found";
+    if (year) {
 
-    }
+        year.textContent =
+            new Date()
+                .getFullYear();
 
-    if (projectShortDescription) {
-
-        projectShortDescription.textContent =
-            "The project you are looking for could not be found.";
-
-    }
-
-    if (projectDescription) {
-
-        projectDescription.textContent =
-            "Please return to the projects section and select a valid project.";
-
-    }
-
-    if (projectTechnologies) {
-        projectTechnologies.innerHTML = "";
-    }
-
-    if (projectFeatures) {
-        projectFeatures.innerHTML = "";
-    }
-
-    if (projectGallery) {
-
-        projectGallery.innerHTML = `
-            <div class="gallery-empty">
-                Project information is unavailable.
-            </div>
-        `;
-
-    }
-
-    if (projectVideos) {
-        projectVideos.innerHTML = "";
     }
 
 }
 
 
 /* =========================================================
-   SECURITY / TEXT SANITIZATION
-========================================================= */
+   ERROR HANDLING
+   ========================================================= */
 
-/*
- * Escape text before inserting it into innerHTML.
- */
+function handleVideoErrors() {
+
+    const videos =
+        $$("#videoGrid video");
+
+    videos.forEach(
+        (video) => {
+
+            video.addEventListener(
+                "error",
+                () => {
+
+                    const card =
+                        video.closest(
+                            ".video-card"
+                        );
+
+                    if (!card) {
+                        return;
+                    }
+
+                    const wrapper =
+                        card.querySelector(
+                            ".video-wrapper"
+                        );
+
+                    if (wrapper) {
+
+                        wrapper.innerHTML = `
+                            <div class="page-error">
+                                This video could not be loaded.
+                                Please check the video file path.
+                            </div>
+                        `;
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SECURITY / UTILITY
+   ========================================================= */
 
 function escapeHTML(value) {
 
@@ -1789,96 +1176,31 @@ function escapeHTML(value) {
 }
 
 
-function escapeAttribute(value) {
+function getFilename(path) {
 
-    return escapeHTML(value);
-
-}
-
-
-/* =========================================================
-   FILE NAME HELPER
-========================================================= */
-
-function getDownloadFilename(
-    filePath
-) {
-
-    const cleanPath =
-        filePath.split("?")[0];
-
-    const parts =
-        cleanPath.split("/");
-
-    return parts[
-        parts.length - 1
-    ] || "project-media";
+    return path
+        .split("/")
+        .pop()
+        .split("?")[0];
 
 }
 
 
 /* =========================================================
-   KEYBOARD CONTROLS
-========================================================= */
+   DISABLE RIGHT CLICK ON VIDEOS
+   ========================================================= */
 
 document.addEventListener(
-    "keydown",
-    event => {
-
-        /*
-         * Escape closes modal/lightbox.
-         */
-
-        if (event.key === "Escape") {
-
-            if (
-                codeModal &&
-                !codeModal.classList.contains(
-                    "hidden"
-                )
-            ) {
-
-                closeAccessModal();
-
-            }
-
-
-            if (
-                imageLightbox &&
-                !imageLightbox.classList.contains(
-                    "hidden"
-                )
-            ) {
-
-                closeLightbox();
-
-            }
-
-        }
-
-
-        /*
-         * Image navigation.
-         */
+    "contextmenu",
+    (event) => {
 
         if (
-            imageLightbox &&
-            !imageLightbox.classList.contains(
-                "hidden"
+            event.target.closest(
+                "video"
             )
         ) {
 
-            if (event.key === "ArrowLeft") {
-
-                showPreviousImage();
-
-            }
-
-            if (event.key === "ArrowRight") {
-
-                showNextImage();
-
-            }
+            event.preventDefault();
 
         }
 
@@ -1887,126 +1209,19 @@ document.addEventListener(
 
 
 /* =========================================================
-   MODAL EVENTS
-========================================================= */
-
-if (openCodeModal) {
-
-    openCodeModal.addEventListener(
-        "click",
-        openAccessModal
-    );
-
-}
-
-
-if (closeCodeModal) {
-
-    closeCodeModal.addEventListener(
-        "click",
-        closeAccessModal
-    );
-
-}
-
-
-if (accessCodeForm) {
-
-    accessCodeForm.addEventListener(
-        "submit",
-        verifyAccessCode
-    );
-
-}
-
-
-if (codeModal) {
-
-    codeModal.addEventListener(
-        "click",
-        event => {
-
-            if (
-                event.target ===
-                codeModal
-            ) {
-
-                closeAccessModal();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   LIGHTBOX EVENTS
-========================================================= */
-
-if (lightboxClose) {
-
-    lightboxClose.addEventListener(
-        "click",
-        closeLightbox
-    );
-
-}
-
-
-if (lightboxPrev) {
-
-    lightboxPrev.addEventListener(
-        "click",
-        showPreviousImage
-    );
-
-}
-
-
-if (lightboxNext) {
-
-    lightboxNext.addEventListener(
-        "click",
-        showNextImage
-    );
-
-}
-
-
-if (imageLightbox) {
-
-    imageLightbox.addEventListener(
-        "click",
-        event => {
-
-            if (
-                event.target ===
-                imageLightbox
-            ) {
-
-                closeLightbox();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   INITIALIZATION
-========================================================= */
+   STARTUP
+   ========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     () => {
 
-        loadProject();
+        restoreVideoAccess();
 
-        checkExistingVideoAccess();
+        setTimeout(
+            handleVideoErrors,
+            300
+        );
 
     }
 );
